@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-15 03:09:42.548506",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "category",
+  "uom_name",
+  "price_per_unit",
+  "available_stock"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Inventory items"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Select_Category\nSeed\nvegetable\nFertilizer\nTool\nPesticide\nconsumable\nOther"
+  },
+  {
+   "fieldname": "uom_name",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "price_per_unit",
+   "fieldtype": "Currency",
+   "label": "Price per unit"
+  },
+  {
+   "fieldname": "available_stock",
+   "fieldtype": "Float",
+   "label": "Available stock"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-15 03:13:56.312282",
+ "modified_by": "Administrator",
+ "module": "Agrstock App",
+ "name": "Items Supplied",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
