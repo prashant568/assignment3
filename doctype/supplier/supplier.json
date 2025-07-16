@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:contact_name",
  "creation": "2025-07-15 02:58:58.040587",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,15 +9,14 @@
   "contact_name",
   "contact",
   "region",
-  "item",
-  "supplier_items",
-  "amended_from"
+  "supplier_items"
  ],
  "fields": [
   {
    "fieldname": "contact_name",
    "fieldtype": "Data",
-   "label": "Contact Name"
+   "label": "Contact Name",
+   "unique": 1
   },
   {
    "fieldname": "contact",
@@ -29,36 +29,21 @@
    "label": "Region"
   },
   {
-   "fieldname": "item",
-   "fieldtype": "Link",
-   "label": "Items",
-   "options": "Inventory items"
-  },
-  {
    "fieldname": "supplier_items",
    "fieldtype": "Table",
    "label": "Supplier items",
    "options": "Items Supplied"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Supplier",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-15 04:42:12.334643",
+ "modified": "2025-07-15 11:40:10.479038",
  "modified_by": "Administrator",
  "module": "Agrstock App",
  "name": "Supplier",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

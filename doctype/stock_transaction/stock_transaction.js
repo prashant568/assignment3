@@ -6,30 +6,32 @@
 
 // 	},
 // });
-frappe.ui.form.on('Stock Transaction', {
-    item: function(frm) {
-        // Always disable quantity until item and uom are confirmed
-        frm.set_df_property('quantity', 'read_only', 1);
-        frm.set_value('uom_name', null);
+frappe.ui.form.on('Purchase Request', {
+    refresh(frm) {
+        console.log("🔍 JS loaded for Purchase Request");
 
-        if (frm.doc.item) {
-            frappe.db.get_value('Inventory items', frm.doc.item, 'uom_name', function(r) {
-                if (r && r.uom_name) {
-                    frm.set_value('uom_name', r.uom_name);
+        if (frm.doc.docstatus === 1 && frm.doc.status === "Pending") {
+            console.log("🟡 Showing Fulfill Button");
 
-                    // ✅ Only enable and set quantity if it is empty or zero
-                    frm.set_df_property('quantity', 'read_only', 0);
-                    if (!frm.doc.quantity || frm.doc.quantity === 0) {
-                        frm.set_value('quantity', 1);
+            frm.add_custom_button('Mark as Fulfilled', () => {
+                console.log("🟢 Fulfill button clicked");
+
+                frappe.call({
+                    method: 'agrstock_app.agrstock_app.doctype.purchase_request.purchase_request.fulfill_purchase_request',
+                    args: {
+                        docname: frm.doc.name
+                    },
+                    callback: function (r) {
+                        console.log("🔁 Backend call complete", r);
+                        if (!r.exc) {
+                            frappe.msgprint('✅ Request fulfilled and stock updated.');
+                            frm.reload_doc();
+                        } else {
+                            frappe.msgprint('❌ Something went wrong.');
+                        }
                     }
-                } else {
-                    frappe.msgprint("❌ Could not fetch UOM for selected item.");
-                }
-            });
-        } else {
-            frm.set_df_property('quantity', 'read_only', 1);
-            frm.set_value('quantity', null);
+                });
+            }, 'Actions');
         }
     }
 });
-

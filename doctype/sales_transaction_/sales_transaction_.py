@@ -4,7 +4,7 @@ from frappe.model.document import Document
 class SalesTransaction_(Document):
     def on_submit(self):
         # Debug: confirm method is triggered
-        frappe.msgprint(f"Submitting Sales Transaction for item: {self.item}")
+       
 
         # Ensure required fields are present
         if not self.item or not self.quantity or not self.type:

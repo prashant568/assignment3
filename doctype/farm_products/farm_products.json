@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-16 07:47:06.260722",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_nh9q",
+  "column_break_yqxg",
+  "item",
+  "usage_type",
+  "quantity",
+  "category",
+  "uom_item",
+  "price",
+  "reorder_level",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_nh9q",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Inventory items"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Crops\nVegetables\nFruits\ntools\nfertilizers\nothers"
+  },
+  {
+   "fieldname": "uom_item",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Estimated Price"
+  },
+  {
+   "fieldname": "reorder_level",
+   "fieldtype": "Float",
+   "label": "Reorder Level"
+  },
+  {
+   "fieldname": "usage_type",
+   "fieldtype": "Select",
+   "label": "Usage Type",
+   "options": "Sell\nUse"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "column_break_yqxg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Farm products",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-16 16:56:33.455223",
+ "modified_by": "Administrator",
+ "module": "Agrstock App",
+ "name": "Farm products",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

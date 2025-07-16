@@ -6,11 +6,14 @@
  "engine": "InnoDB",
  "field_order": [
   "farm",
-  "item",
   "farm_manager",
+  "supplier",
+  "item",
   "purchase_quantity",
   "required_by",
+  "uom_item",
   "status",
+  "payment_type",
   "description",
   "amended_from"
  ],
@@ -40,17 +43,30 @@
    "reqd": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Fulfilled\nRejected\nDraft",
+   "options": "Draft\nPending\nFulfilled",
    "reqd": 1
   },
   {
    "fieldname": "description",
    "fieldtype": "Small Text",
    "label": "Description"
+  },
+  {
+   "fetch_from": "farm.farm_owmer",
+   "fieldname": "farm_manager",
+   "fieldtype": "Data",
+   "label": "farm manager"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
   },
   {
    "fieldname": "amended_from",
@@ -63,16 +79,23 @@
    "search_index": 1
   },
   {
-   "fieldname": "farm_manager",
-   "fieldtype": "Data",
-   "label": "farm manager"
+   "fieldname": "uom_item",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "label": "Payment Type",
+   "options": "Cash\nPost-harvest\nGoods"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-15 08:38:39.131665",
+ "modified": "2025-07-16 08:09:10.087504",
  "modified_by": "Administrator",
  "module": "Agrstock App",
  "name": "Purchase Request",

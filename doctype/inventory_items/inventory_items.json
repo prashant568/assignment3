@@ -8,11 +8,7 @@
  "field_order": [
   "item",
   "item_category",
-  "farm",
-  "uom_name",
-  "current_stock",
-  "reorder_level",
-  "description"
+  "uom_name"
  ],
  "fields": [
   {
@@ -38,37 +34,13 @@
    "label": "Unit of Measure (UOM)",
    "options": "UOM",
    "reqd": 1
-  },
-  {
-   "fieldname": "current_stock",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Current Stock",
-   "reqd": 1
-  },
-  {
-   "fieldname": "reorder_level",
-   "fieldtype": "Float",
-   "label": "Reorder Level",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description (optional)"
-  },
-  {
-   "fieldname": "farm",
-   "fieldtype": "Link",
-   "label": "Farm",
-   "options": "Farm"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-07-15 05:24:45.770895",
+ "modified": "2025-07-16 13:56:10.609133",
  "modified_by": "Administrator",
  "module": "Agrstock App",
  "name": "Inventory items",

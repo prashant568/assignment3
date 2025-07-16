@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "format:FM-{###}",
  "creation": "2025-07-15 02:47:43.575179",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,6 +11,7 @@
   "farm_owmer",
   "size",
   "soil_type",
+  "farm_products",
   "amended_from"
  ],
  "fields": [
@@ -18,7 +19,7 @@
    "fieldname": "name1",
    "fieldtype": "Data",
    "label": "Name",
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "location",
@@ -28,10 +29,12 @@
   {
    "allow_on_submit": 1,
    "fieldname": "farm_owmer",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_filter": 1,
    "in_list_view": 1,
-   "label": "Farm Owner"
+   "label": "Farm Owner",
+   "options": "User",
+   "unique": 1
   },
   {
    "fieldname": "size",
@@ -45,6 +48,12 @@
    "options": "clay\nSandy\nChalky\nLoamy\nPeaty"
   },
   {
+   "fieldname": "farm_products",
+   "fieldtype": "Table",
+   "label": "Farm products",
+   "options": "Farm products"
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -56,14 +65,12 @@
   }
  ],
  "grid_page_length": 50,
- "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2025-07-15 08:59:29.071802",
+ "modified": "2025-07-16 17:48:28.337338",
  "modified_by": "Administrator",
  "module": "Agrstock App",
  "name": "Farm",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
